@@ -1,0 +1,11 @@
+<h1>Epicoders</h1>
+
+<ul>
+  {{#each}}
+    <li>{{#link-to 'profile' this.id}}{{title}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+<p><a href='#' {{action 'sortByTitle'}}>Sort by title</a></p>
+
+{{#link-to 'new-profile' classNames="btn btn-primary"}}New scary profile{{/link-to}}
