@@ -1,11 +1,22 @@
 <h1>Epicoders</h1>
 
-<ul>
+<div class="profiles">
   {{#each}}
-    <li>{{#link-to 'profile' this.id}}{{title}}{{/link-to}}</li>
+    <div class="row profile">
+      <div class="col-md-3">
+        <img {{bind-attr src=avatar}} alt="Profile Image" height="230" width="230">
+      </div>
+      <div class="col-md-9">
+        <h2>{{name}}</h2>
+        <ul class="contact">
+          <li><a {{bind-attr href=githubLink}}><span class="fa fa-github fa-2x"></span> {{github_username}}</a></li>
+          <li><a {{bind-attr href=emailLink}}><span class="fa fa-envelope-o fa-2x"></span> {{email}}</a></li>
+          <li><a {{bind-attr href=html_url}}><span class="fa fa-home fa-2x"></span> {{html_url}}</a></li>
+        </ul>
+      </div>
+    </div>
   {{/each}}
-</ul>
+</div>
 
-<p><a href='#' {{action 'sortByTitle'}}>Sort by title</a></p>
 
-{{#link-to 'new-profile' classNames="btn btn-primary"}}New scary profile{{/link-to}}
+<p><a href='#' {{action 'sortByTitle'}}>Sort by name</a></p>
