@@ -1,0 +1,26 @@
+<h1>Epicoders</h1>
+
+<div class="students">
+  {{#each}}
+    <div class="row student">
+      <div class="col-md-3">
+        <img {{bind-attr src=avatar}} alt="Student Image" height="230" width="230">
+      </div>
+      <div class="col-md-9">
+        <h2>{{name}}</h2>
+          <strong>Class of {{season}} {{year}} </strong>
+          <p>{{bio}}</p>
+          <div class="contacts">
+            <ul class="contact">
+              <li><a {{bind-attr href=githubLink}}><span class="fa fa-github fa-2x"></span> {{!-- {{github_username}} --}}</a></li>
+              <li><a {{bind-attr href=emailLink}}><span class="fa fa-envelope-o fa-2x"></span> {{!-- {{email}} --}}</a></li>
+              <li><a {{bind-attr href=html_url}}><span class="fa fa-home fa-2x"></span> {{!-- {{html_url}} --}}</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+
+<p><a href='#' {{action 'sortByName'}}>Sort by name</a></p>

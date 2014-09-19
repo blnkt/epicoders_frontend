@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['profile'],
+  needs: ['student'],
   actions: {
     save: function() {
       var comment = this.store.createRecord('comment', {
@@ -9,11 +9,11 @@ export default Ember.Controller.extend({
       });
       comment.save();
 
-      var profile = this.get('controllers.profile.model');
-      profile.get('comments').pushObject(comment);
-      profile.save();
+      var student = this.get('controllers.student.model');
+      student.get('comments').pushObject(comment);
+      student.save();
 
-      this.transitionToRoute('profile', profile.id);
+      this.transitionToRoute('student', student.id);
     }
   }
 });

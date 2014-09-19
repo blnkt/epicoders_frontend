@@ -6,11 +6,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('profiles', {path: '/'});
-  this.resource('profile', {path: 'profiles/:profile_id'}, function() {
+  this.resource('students', {path: '/'});
+  this.resource('student', {path: 'students/:student_id'}, function() {
     this.resource('new-comment');
   });
-  this.resource('new-profile');
+  this.resource('new-student');
   this.resource('recent-comments');
   this.resource('about', {path: '/about-us'});
   this.resource('contact', {path: '/get-in-touch'}, function() {
