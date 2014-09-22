@@ -8,5 +8,5 @@ export default DS.ActiveModelAdapter.extend({
 
 
 
-export default DS.FixtureAdapter.extend({
-});
+// export default DS.FixtureAdapter.extend({
+// });
