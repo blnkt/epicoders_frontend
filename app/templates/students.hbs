@@ -12,9 +12,9 @@
           <p>{{bio}}</p>
           <div class="contacts">
             <ul class="contact">
-              <li><a {{bind-attr href=githubLink}}><span class="fa fa-github fa-2x"></span> {{!-- {{github_username}} --}}</a></li>
-              <li><a {{bind-attr href=emailLink}}><span class="fa fa-envelope-o fa-2x"></span> {{!-- {{email}} --}}</a></li>
-              <li><a {{bind-attr href=html_url}}><span class="fa fa-home fa-2x"></span> {{!-- {{html_url}} --}}</a></li>
+              {{#if github_username }}<li><a {{bind-attr href=githubLink}}><span class="fa fa-github fa-2x"></span> {{!-- {{github_username}} --}}</a></li>{{/if}}
+              {{#if email }}<li><a {{bind-attr href=emailLink}}><span class="fa fa-envelope-o fa-2x"></span> {{!-- {{email}} --}}</a></li>{{/if}}
+              {{#if html_url }}<li><a {{bind-attr href=html_url}}><span class="fa fa-home fa-2x"></span> {{!-- {{html_url}} --}}</a></li>{{/if}}
             </ul>
           </div>
       </div>
