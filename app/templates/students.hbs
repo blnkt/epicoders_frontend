@@ -7,7 +7,7 @@
         <img {{bind-attr src=avatar}} alt="Student Image" height="230" width="230">
       </div>
       <div class="col-md-9">
-        <h2>{{name}}</h2>
+        <h2>{{name}}{{#if hireable }}<span class="fa fa-check-circle fa-md"></span><small class="hireable">For Hire</small>{{/if}}</h2>
           <strong>Class of {{season}} {{year}} </strong>
           <p>{{bio}}</p>
           <div class="contacts">
