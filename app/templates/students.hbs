@@ -1,8 +1,5 @@
 <h1>Epicoders</h1>
-
-<p><a href='#' {{action 'sortByStuff'}}></a></p>
-  <p>Sort by Name: {{input type='text' value=searchName placeholder='Name'}}</p>
-  <p>Sort by Year: {{view Ember.Select content=years value=selectedYear}}</p>
+<p>Sort by Name: {{input type='text' value=searchName placeholder='Name'}}  Sort by Year: {{view Ember.Select content=years value=selectedYear}}  Sort by Season: {{view Ember.Select content=seasons value=selectedSeason}}</p>
 <div class="students">
   {{#each results}}
     <div class="row student">
