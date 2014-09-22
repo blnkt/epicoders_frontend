@@ -18,6 +18,7 @@ export default DS.Model.extend({
   bio: DS.attr(),
   project: DS.attr(),
   html_url: DS.attr(),
+  linked_in_url: DS.attr(),
   comments: DS.hasMany('comment', {async: true})
 });
 

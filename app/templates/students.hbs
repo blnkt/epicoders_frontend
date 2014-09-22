@@ -1,20 +1,25 @@
 <h1>Epicoders</h1>
 
+<p><a href='#' {{action 'sortByStuff'}}></a></p>
+  <p>Sort by Name: {{input type='text' value=searchName placeholder='Name'}}</p>
+  <p>Sort by Year: {{view Ember.Select content=years value=selectedYear}}</p>
 <div class="students">
-  {{#each}}
+  {{#each results}}
     <div class="row student">
       <div class="col-md-3">
         <img {{bind-attr src=avatar}} alt="Student Image" height="230" width="230">
       </div>
-      <div class="col-md-9">
-        <h2>{{name}}{{#if hireable }}<span class="fa fa-check-circle fa-md"></span><small class="hireable">For Hire</small>{{/if}}</h2>
-          <strong>Class of {{season}} {{year}} </strong>
-          <p>{{bio}}</p>
+      <div class="col-md-9 content">
+        <h2>{{name}}{{#if hireable }}<span class="fa fa-check-circle"></span><small class="hireable">For hire</small>{{/if}}{{#if current_location }}<small class="hireable">  {{#if hireable}}in {{/if}} {{current_location}}</small>{{/if}}</h2>
+
+          <p><strong>Class of {{season}} {{year}}</strong></p>
+          {{#if bio }}<p>{{bio}}</p>{{/if}}
           <div class="contacts">
-            <ul class="contact">
+            <ul class="contact clearfix">
               {{#if github_username }}<li><a {{bind-attr href=githubLink}}><span class="fa fa-github fa-2x"></span> {{!-- {{github_username}} --}}</a></li>{{/if}}
               {{#if email }}<li><a {{bind-attr href=emailLink}}><span class="fa fa-envelope-o fa-2x"></span> {{!-- {{email}} --}}</a></li>{{/if}}
               {{#if html_url }}<li><a {{bind-attr href=html_url}}><span class="fa fa-home fa-2x"></span> {{!-- {{html_url}} --}}</a></li>{{/if}}
+              <li class="top-project"><strong>Top Github Project: <a {{bind-attr href=project}}>{{project}}</a></strong></li>
             </ul>
           </div>
       </div>
@@ -23,4 +28,3 @@
 </div>
 
 
-<p><a href='#' {{action 'sortByName'}}>Sort by name</a></p>

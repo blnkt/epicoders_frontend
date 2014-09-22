@@ -7,17 +7,24 @@
 
   <div class="form-group">
     <label for="season">Season</label>
-    {{input value=season id="season" class="form-control"}}
+    {{view Ember.Select content=seasons value=season}}
+    {{!-- {{input value=season id="season" class="form-control"}} --}}
+    <label for="year">Year</label>
+    {{view Ember.Select content=years value=year}}
   </div>
 
   <div class="form-group">
-    <label for="year">Year</label>
-    {{input type='number' value=year id="year" class="form-control"}}
+{{!--     {{input type='number' value=year id="year" class="form-control"}} --}}
   </div>
 
   <div class="form-group">
     <label for="github_username">Github Username</label>
     {{input value=github_username id="github_username" class="form-control"}}
+  </div>
+
+  <div class="form-group">
+    <label for="linked_in_url">LinkedIN URL</label>
+    {{input value=linked_in_url id="linked_in_url" class="form-control" placeholder="https://www.linkedin.com/in/..."}}
   </div>
 
   <button class="btn btn-primary" {{action 'save'}}>Save</button>
