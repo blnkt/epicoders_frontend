@@ -12,8 +12,12 @@ export default Ember.Controller.extend({
         github_username: this.get('github_username'),
         linked_in_url: this.get('linked_in_url')
       });
-      newStudent.save();
-      this.transitionToRoute('students');
+      newStudent.save().then(function() {
+        this.transitionToRoute('students');
+      }, function() {
+        alert('you suck');
+      });
+
     }
   }
 });
